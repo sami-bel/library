@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+    php:
+        image: local_php8_apache2:latest
+        container_name: php8_local
+        volumes:
+            - ../library:/var/www/library
+        ports:
+            - 80:80
