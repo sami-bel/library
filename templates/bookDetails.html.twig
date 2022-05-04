@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="card">
+        <h4 class="card-header">{{book.title}}</h4>
+        <div class="card-body">
+            <h6 class="card-title">Auteur:</h6>{{ book.author }}
+            <h6 class="card-title">Genre:</h6> {{ book.author }}
+            <h6 class="card-title">Année de publication: </h6> {{ book.year }}
+        </div>
+    </div>
+{% endblock %}

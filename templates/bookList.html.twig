@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Titre</th>
+            <th scope="col">Auteur</th>
+            <th scope="col">Genre</th>
+            <th scope="col">année de publication</th>
+        </tr>
+        </thead>
+        <tbody>
+
+            {% for book in books %}
+                <tr>
+                    <td><a class="link-primary" href="{{ path('book', {title: book.title}) }}">{{ book.title }}</a></td>
+                    <td><a class="fa" href="{{ path('books', {author: book.author}) }}">{{ book.author }}Item 0</a></td>
+                    <td><a class="fa" href="{{ path('books', {genre : book.genre}) }}">{{ book.genre }}</a></td>
+                    <td><a class="fa" href="{{ path('books', {year : book.year}) }}">{{ book.year }}</a></td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

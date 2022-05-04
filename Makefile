@@ -1,5 +1,6 @@
-init-docker:
+init:
 	cd docker && docker build -t local_php8_apache2:latest .
+	docker exec -it php8_local bash -c 'cd library && composer install && exit'
 
 up:
 	docker-compose up -d
@@ -13,3 +14,6 @@ ssh:
 
 install:
 	docker exec -it php8_local bash -c 'cd library && composer install && exit'
+
+test:
+	docker exec -it php8_local bash -c 'cd library && vendor/bin/phpunit && exit'

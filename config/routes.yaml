@@ -1,3 +1,20 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+all_bocks:
+    path: /
+    controller: 'App\Controller\FetchAllBooks'
+    methods: [ GET ]
+
+book:
+    path: /books/{title}
+    controller: 'App\Controller\FetchBook'
+    methods: [ GET ]
+
+books:
+    path: /books
+    controller: 'App\Controller\FetchBooksByFilter'
+    methods: [ GET ]
+
+

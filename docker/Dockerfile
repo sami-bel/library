@@ -7,7 +7,7 @@ WORKDIR /var/www
 COPY config/apache/projects.conf /etc/apache2/sites-available/projects.conf
 # Install composer
 RUN \
-    apt-get update && apt-get -y install wget && apt-get install -y git &&\
+    apt-get update && apt-get -y install wget && apt-get install -y git && apt-get install -y nano &&\
     docker-php-ext-install pdo_mysql &&\
     a2enmod rewrite && \
     a2ensite projects && \
