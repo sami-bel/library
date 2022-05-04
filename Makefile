@@ -1,5 +1,6 @@
 init:
 	cd docker && docker build -t local_php8_apache2:latest .
+	docker-compose up -d
 	docker exec -it php8_local bash -c 'cd library && composer install && exit'
 
 up:
